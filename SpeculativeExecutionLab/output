@@ -1,0 +1,331 @@
+Welcome to the C S 429 System Emulator
+
+Author: [1m[31mReference Implementation[0m
+Run begun at Fri Mar 31 13:59:23 2023
+
+
+
+Pipeline state at end of cycle 0:
+F: SUB   [PC, insn_bits] = [00400110,  D10083FF], seq_succ_PC: 0x400114, pred_PC: 0x400114, status: AOK
+D: NOP   [val_a, val_b, imm] = [0x0, 0x0, 0x0], alu_op: PASS_A_OP, cond: EQ, dst: X0, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: NOP   [val_ex, a, b, imm, hw] = [0x0, 0x0, 0x0, 0x0, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: NOP   [val_ex, val_b, val_mem] = [0x0, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: NOP   [dst, val_ex, val_mem] = [X0, 0x0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 1:
+F: MOVZ  [PC, insn_bits] = [00400114,  D28003E0], seq_succ_PC: 0x400118, pred_PC: 0x400118, status: BUB
+D: SUB   [val_a, val_b, imm] = [0x7FFFFFFF8, 0x0, 0x20], alu_op: MINUS_OP, cond: EQ, dst: X31, status: AOK
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true]
+X: NOP   [val_ex, a, b, imm, hw] = [0x0, 0x0, 0x0, 0x0, 0x0], alu_op: PASS_A_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: NOP   [val_ex, val_b, val_mem] = [0x0, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: NOP   [dst, val_ex, val_mem] = [X0, 0x0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 2:
+F: MOVZ  [PC, insn_bits] = [00400118,  D2800521], seq_succ_PC: 0x40011C, pred_PC: 0x40011C, status: BUB
+D: MOVZ  [val_a, val_b, imm] = [0x0, 0x0, 0x1F], alu_op: MOV_OP, cond: EQ, dst: X0, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true]
+X: SUB   [val_ex, a, b, imm, hw] = [0x7FFFFFFD8, 0x7FFFFFFF8, 0x0, 0x20, 0x0], alu_op: MINUS_OP, status: AOK
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: NOP   [val_ex, val_b, val_mem] = [0x0, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: NOP   [dst, val_ex, val_mem] = [X0, 0x0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 3:
+F: MOVZ  [PC, insn_bits] = [0040011C,  D2800762], seq_succ_PC: 0x400120, pred_PC: 0x400120, status: BUB
+D: MOVZ  [val_a, val_b, imm] = [0x0, 0x0, 0x29], alu_op: MOV_OP, cond: EQ, dst: X1, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true]
+X: MOVZ  [val_ex, a, b, imm, hw] = [0x1F, 0x0, 0x0, 0x1F, 0x0], alu_op: MOV_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: SUB   [val_ex, val_b, val_mem] = [0x7FFFFFFD8, 0x0, 0x0], status: AOK
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: NOP   [dst, val_ex, val_mem] = [X0, 0x0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 4:
+F: MOVZ  [PC, insn_bits] = [00400120,  D2800343], seq_succ_PC: 0x400124, pred_PC: 0x400124, status: BUB
+D: MOVZ  [val_a, val_b, imm] = [0x0, 0x0, 0x3B], alu_op: MOV_OP, cond: EQ, dst: X2, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true]
+X: MOVZ  [val_ex, a, b, imm, hw] = [0x29, 0x0, 0x0, 0x29, 0x0], alu_op: MOV_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: MOVZ  [val_ex, val_b, val_mem] = [0x1F, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: SUB   [dst, val_ex, val_mem] = [X31, 0x7FFFFFFD8, 0x0], status: AOK
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true], W_wval: 0x7ffffffd8
+
+
+
+Pipeline state at end of cycle 5:
+F: STUR  [PC, insn_bits] = [00400124,  F80003E0], seq_succ_PC: 0x400128, pred_PC: 0x400128, status: BUB
+D: MOVZ  [val_a, val_b, imm] = [0x0, 0x0, 0x1A], alu_op: MOV_OP, cond: EQ, dst: X3, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true]
+X: MOVZ  [val_ex, a, b, imm, hw] = [0x3B, 0x0, 0x0, 0x3B, 0x0], alu_op: MOV_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: MOVZ  [val_ex, val_b, val_mem] = [0x29, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: MOVZ  [dst, val_ex, val_mem] = [X0, 0x1F, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true], W_wval: 0x1f
+
+
+
+Pipeline state at end of cycle 6:
+F: STUR  [PC, insn_bits] = [00400128,  F80083E1], seq_succ_PC: 0x40012C, pred_PC: 0x40012C, status: BUB
+D: STUR  [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x0], alu_op: PLUS_OP, cond: EQ, dst: X0, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, true]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: MOVZ  [val_ex, a, b, imm, hw] = [0x1A, 0x0, 0x0, 0x1A, 0x0], alu_op: MOV_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: MOVZ  [val_ex, val_b, val_mem] = [0x3B, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: MOVZ  [dst, val_ex, val_mem] = [X1, 0x29, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true], W_wval: 0x29
+
+
+
+Pipeline state at end of cycle 7:
+F: STUR  [PC, insn_bits] = [0040012C,  F80103E2], seq_succ_PC: 0x400130, pred_PC: 0x400130, status: BUB
+D: STUR  [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x8], alu_op: PLUS_OP, cond: EQ, dst: X1, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, true]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: STUR  [val_ex, a, b, imm, hw] = [0x7FFFFFFD8, 0x7FFFFFFD8, 0x0, 0x0, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: MOVZ  [val_ex, val_b, val_mem] = [0x1A, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: MOVZ  [dst, val_ex, val_mem] = [X2, 0x3B, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true], W_wval: 0x3b
+
+
+
+Pipeline state at end of cycle 8:
+F: STUR  [PC, insn_bits] = [00400130,  F80183E3], seq_succ_PC: 0x400134, pred_PC: 0x400134, status: BUB
+D: STUR  [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x10], alu_op: PLUS_OP, cond: EQ, dst: X2, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, true]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: STUR  [val_ex, a, b, imm, hw] = [0x7FFFFFFE0, 0x7FFFFFFD8, 0x0, 0x8, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: STUR  [val_ex, val_b, val_mem] = [0x7FFFFFFD8, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, true]
+W: MOVZ  [dst, val_ex, val_mem] = [X3, 0x1A, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true], W_wval: 0x1a
+
+
+
+Pipeline state at end of cycle 9:
+F: LDUR  [PC, insn_bits] = [00400134,  F84003E4], seq_succ_PC: 0x400138, pred_PC: 0x400138, status: BUB
+D: STUR  [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x18], alu_op: PLUS_OP, cond: EQ, dst: X3, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, true]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: STUR  [val_ex, a, b, imm, hw] = [0x7FFFFFFE8, 0x7FFFFFFD8, 0x0, 0x10, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: STUR  [val_ex, val_b, val_mem] = [0x7FFFFFFE0, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, true]
+W: STUR  [dst, val_ex, val_mem] = [X0, 0x7FFFFFFD8, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x7ffffffd8
+
+
+
+Pipeline state at end of cycle 10:
+F: LDUR  [PC, insn_bits] = [00400138,  F84083E5], seq_succ_PC: 0x40013C, pred_PC: 0x40013C, status: BUB
+D: LDUR  [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x0], alu_op: PLUS_OP, cond: EQ, dst: X4, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [true , false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, true , true]
+X: STUR  [val_ex, a, b, imm, hw] = [0x7FFFFFFF0, 0x7FFFFFFD8, 0x0, 0x18, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: STUR  [val_ex, val_b, val_mem] = [0x7FFFFFFE8, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, true]
+W: STUR  [dst, val_ex, val_mem] = [X1, 0x7FFFFFFE0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x7ffffffe0
+
+
+
+Pipeline state at end of cycle 11:
+F: LDUR  [PC, insn_bits] = [0040013C,  F84103E6], seq_succ_PC: 0x400140, pred_PC: 0x400140, status: BUB
+D: LDUR  [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x8], alu_op: PLUS_OP, cond: EQ, dst: X5, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [true , false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, true , true]
+X: LDUR  [val_ex, a, b, imm, hw] = [0x7FFFFFFD8, 0x7FFFFFFD8, 0x0, 0x0, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: STUR  [val_ex, val_b, val_mem] = [0x7FFFFFFF0, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, true]
+W: STUR  [dst, val_ex, val_mem] = [X2, 0x7FFFFFFE8, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x7ffffffe8
+
+
+
+Pipeline state at end of cycle 12:
+F: LDUR  [PC, insn_bits] = [00400140,  F84183E7], seq_succ_PC: 0x400144, pred_PC: 0x400144, status: BUB
+D: LDUR  [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x10], alu_op: PLUS_OP, cond: EQ, dst: X6, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [true , false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, true , true]
+X: LDUR  [val_ex, a, b, imm, hw] = [0x7FFFFFFE0, 0x7FFFFFFD8, 0x0, 0x8, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: LDUR  [val_ex, val_b, val_mem] = [0x7FFFFFFD8, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [true , false]
+W: STUR  [dst, val_ex, val_mem] = [X3, 0x7FFFFFFF0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x7fffffff0
+
+
+
+Pipeline state at end of cycle 13:
+F: ADD   [PC, insn_bits] = [00400144,  910083FF], seq_succ_PC: 0x400148, pred_PC: 0x400148, status: BUB
+D: LDUR  [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x18], alu_op: PLUS_OP, cond: EQ, dst: X7, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [true , false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, true , true]
+X: LDUR  [val_ex, a, b, imm, hw] = [0x7FFFFFFE8, 0x7FFFFFFD8, 0x0, 0x10, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: LDUR  [val_ex, val_b, val_mem] = [0x7FFFFFFE0, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [true , false]
+W: LDUR  [dst, val_ex, val_mem] = [X4, 0x7FFFFFFD8, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, true , true], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 14:
+F: RET   [PC, insn_bits] = [00400148,  D65F03C0], seq_succ_PC: 0x40014C, pred_PC: 0x40014C, status: BUB
+D: ADD   [val_a, val_b, imm] = [0x7FFFFFFD8, 0x0, 0x20], alu_op: PLUS_OP, cond: EQ, dst: X31, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true]
+X: LDUR  [val_ex, a, b, imm, hw] = [0x7FFFFFFF0, 0x7FFFFFFD8, 0x0, 0x18, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: LDUR  [val_ex, val_b, val_mem] = [0x7FFFFFFE8, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [true , false]
+W: LDUR  [dst, val_ex, val_mem] = [X5, 0x7FFFFFFE0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, true , true], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 15:
+F: HLT   [PC, insn_bits] = [0040014C,  D4400000], seq_succ_PC: 0x40014C, pred_PC: 0x40014C, status: HLT
+D: RET   [val_a, val_b, imm] = [0x0, 0x0, 0x0], alu_op: PASS_A_OP, cond: EQ, dst: X31, status: BUB
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: ADD   [val_ex, a, b, imm, hw] = [0x7FFFFFFF8, 0x7FFFFFFD8, 0x0, 0x20, 0x0], alu_op: PLUS_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: LDUR  [val_ex, val_b, val_mem] = [0x7FFFFFFF0, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [true , false]
+W: LDUR  [dst, val_ex, val_mem] = [X6, 0x7FFFFFFE8, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, true , true], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 16:
+F: (null)[PC, insn_bits] = [0040014C,  00000000], seq_succ_PC: 0x400150, pred_PC: 0x400150, status: INS
+D: HLT   [val_a, val_b, imm] = [0x0, 0x0, 0x0], alu_op: PASS_A_OP, cond: EQ, dst: X31, status: HLT
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: RET   [val_ex, a, b, imm, hw] = [0x0, 0x0, 0x0, 0x0, 0x0], alu_op: PASS_A_OP, status: BUB
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: ADD   [val_ex, val_b, val_mem] = [0x7FFFFFFF8, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: LDUR  [dst, val_ex, val_mem] = [X7, 0x7FFFFFFF0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, true , true], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 17:
+F: (null)[PC, insn_bits] = [00400150,  00000000], seq_succ_PC: 0x400150, pred_PC: 0x400150, status: INS
+D: HLT   [val_a, val_b, imm] = [0x0, 0x0, 0x0], alu_op: PASS_A_OP, cond: EQ, dst: X31, status: HLT
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: HLT   [val_ex, a, b, imm, hw] = [0x0, 0x0, 0x0, 0x0, 0x0], alu_op: PASS_A_OP, status: HLT
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: RET   [val_ex, val_b, val_mem] = [0x0, 0x0, 0x0], status: BUB
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: ADD   [dst, val_ex, val_mem] = [X31, 0x7FFFFFFF8, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, true], W_wval: 0x7fffffff8
+
+
+
+Pipeline state at end of cycle 18:
+F: (null)[PC, insn_bits] = [00400150,  00000000], seq_succ_PC: 0x400150, pred_PC: 0x400150, status: INS
+D: HLT   [val_a, val_b, imm] = [0x0, 0x0, 0x0], alu_op: PASS_A_OP, cond: EQ, dst: X31, status: HLT
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: HLT   [val_ex, a, b, imm, hw] = [0x0, 0x0, 0x0, 0x0, 0x0], alu_op: PASS_A_OP, status: HLT
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: HLT   [val_ex, val_b, val_mem] = [0x0, 0x0, 0x0], status: HLT
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: RET   [dst, val_ex, val_mem] = [X31, 0x0, 0x0], status: BUB
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x0
+
+
+
+Pipeline state at end of cycle 19:
+F: (null)[PC, insn_bits] = [00400150,  00000000], seq_succ_PC: 0x400150, pred_PC: 0x400150, status: INS
+D: HLT   [val_a, val_b, imm] = [0x0, 0x0, 0x0], alu_op: PASS_A_OP, cond: EQ, dst: X31, status: HLT
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false]
+X: HLT   [val_ex, a, b, imm, hw] = [0x0, 0x0, 0x0, 0x0, 0x0], alu_op: PASS_A_OP, status: HLT
+	 X_condval: false
+	 X_sigs: [valb_sel, set_CC] = [false, false]
+M: HLT   [val_ex, val_b, val_mem] = [0x0, 0x0, 0x0], status: HLT
+	 M_sigs: [dmem_read, dmem_write] = [false, false]
+W: HLT   [dst, val_ex, val_mem] = [X31, 0x0, 0x0], status: HLT
+	 W_sigs: [dst_sel, wval_sel, w_enable] = [false, false, false], W_wval: 0x0
+
+
+Run ended at Fri Mar 31 13:59:23 2023
+
+[1mGoodbye!
+
+[0m
