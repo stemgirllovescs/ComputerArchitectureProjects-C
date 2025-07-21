@@ -15,7 +15,7 @@ This repository gathers five lab-style projects completed for UT Austin’s CS 4
 ## Development Notes
 
 * **Incremental checkpoints:** Each lab was built in stages with automated runners validating new requirements.
-* **Collaboration:** I implemented core logic; my teammate authored and maintained comprehensive test suites.
+* **Collaboration:** Some projects are individually done. Some projects allowed collaboration.
 * **Debugging:** ChatGPT was occasionally used to assist with tracing segmentation faults or logic errors (e.g., prompts like “Please debug my C code”).
 
 ## Building and Running
